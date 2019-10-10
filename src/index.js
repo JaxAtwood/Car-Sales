@@ -7,3 +7,19 @@ import './styles.scss';
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
+
+/*
+//here you'll want to import {createStore} from redux;
+//import {Provider} from 'react-redux'
+//import your reducer here and use it inside the store you create such as: 
+import {reducer} from './reducers/reducer';
+const store = createStore(reducer)
+​
+//Wrap your App component in your provider & pass the store constant:
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+<Provider store={store}>
+<App />
+</Provider>
+, rootElement);
+*/
