@@ -7,20 +7,8 @@ import Total from './components/Total';
 import { connect } from "react-redux";
 import { addFeature, removeFeature } from "./actions/index";
 
-
-//state is an object
-//then a number (additionalPrice)
-//then a nested object (car)
-//then a nested array (features)
-//nested array with nested objects (additonalFeatures)
-//will be challenging in the reducer logic (return of case)
-//to add additionalFeatures to features array, spread in all your state
-//then update car property, spread in all car properties
-//then update features, then spread in all current features
-//then add feature
 const App = (props) => {
   
-
   const removeFeature = item => {
     // dispatch an action here to remove an item
     props.removeFeature(item);
@@ -34,12 +22,12 @@ const App = (props) => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} />
+        <Header car={props.car} />
+        <AddedFeatures car={props.car} />
       </div>
       <div className="box">
-        <AdditionalFeatures store={state.store} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
+        <AdditionalFeatures store={props.store} addFeature={buyItem} removeFeature={removeFeature}/>
+        <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
   );
